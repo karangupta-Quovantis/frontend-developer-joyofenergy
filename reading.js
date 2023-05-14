@@ -1,8 +1,8 @@
-export const getReadings = async (length = 1200) => {
+export const getReadings = async (length = 1440) => {  // 24 hrs X 60 days
   const current = Date.now();
   const hour = 1000 * 60 * 60;
   return [...new Array(length)].map((_, index) => ({
-    time: current - index * hour,
+    time: current - index * hour, // replace - with + to produce futuristic data
     value: Math.random() * 0.7 + 0.4,
   }));
 };

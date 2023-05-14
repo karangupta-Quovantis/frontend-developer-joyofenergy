@@ -6,12 +6,14 @@ export const formatDateLabel = (timestamp) => {
   const date = new Date(timestamp);
   const month = date.getMonth();
   const day = date.getDate();
+  const year = date.getFullYear();
 
   const formatPart = (value) => {
     return value < 10 ? `0${value}` : `${value}`;
   };
 
-  return `${formatPart(day)}/${formatPart(month + 1)}`;
+  // return `${formatPart(day)}/${formatPart(month + 1)}`;
+  return `${formatPart(day)} - ${formatPart(month + 1)} - ${formatPart(year)} `;
 };
 
 export const renderChart = (readings) => {
